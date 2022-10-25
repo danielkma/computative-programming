@@ -1,0 +1,9 @@
+class Solution:
+    def numIdenticalPairs(self, a: List[int]) -> int:
+        a.sort()
+        c=dict(Counter(a))
+        s=0
+        for i in c.values():
+            s+=(i**2-i)//2
+            
+        return s
