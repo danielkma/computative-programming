@@ -1,0 +1,12 @@
+class Solution:
+    def maxCoins(self, p: List[int]) -> int:
+        p.sort()
+        r=len(p)-2
+        s=0
+        ans=0
+        
+        while s<len(p)//3:
+            ans+=p[r]
+            r-=2
+            s+=1
+        return ans
