@@ -1,0 +1,17 @@
+class Solution:
+    def minSetSize(self, arr: List[int]) -> int:
+        c=Counter(arr)
+        b=[]
+        for i in c:
+            b.append([i,c[i]])
+        b.sort(key=lambda x:x[1])
+        c=0
+        ans=0
+        while c < len(arr)//2:
+            x=b.pop()
+            c+=x[1]
+            ans+=1
+        return ans
+        
+        
+        
