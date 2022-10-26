@@ -1,0 +1,19 @@
+class Solution:
+    def numRescueBoats(self, p: List[int], l: int) -> int:
+        p.sort()
+        i,r=0,len(p)-1
+        a=[]
+        while i<=r:
+            if p[r]>=l :
+                a.append([p[r]])
+                r-=1
+            elif p[r]<l and p[r]+p[i] <= l:
+                a.append([p[r],p[i]])
+                i+=1
+                r-=1
+            elif  p[r]<=l:
+                a.append([p[r]])
+                r-=1
+        return len(a)
+                
+                
