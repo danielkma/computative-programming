@@ -1,0 +1,17 @@
+class Solution:
+    def maxScore(self, c: List[int], k: int) -> int:
+        l,r=0,(len(c)-1)-k
+        b=c[r+1:]
+        a=[]
+        s=0
+        for i in b:
+            s+=i
+       
+        a.append(s)
+        while r<=len(c)-2:
+            l+=1
+            r+=1
+            s=s-c[r]+c[l-1]
+            a.append(s)
+        return max(a)
+            
