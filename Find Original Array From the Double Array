@@ -1,0 +1,26 @@
+class Solution:
+    def findOriginalArray(self, n: List[int]) -> List[int]:
+        from collections import Counter
+     
+        l=len(n)
+        n.sort()
+        c=Counter(n)
+        
+        ans=[]
+        if l%2==0:
+            for x in n:
+                if x==0 and c[x]>=2:
+                    c[x]-=2
+                    ans.append(x)
+                    
+                elif x>0 and c[x]and c[2*x]:
+                    c[x]-=1
+                    c[x*2]-=1
+                    ans.append(x)
+            if len(ans)==(len(n)//2):
+                return ans
+            else:
+                return []
+        else:
+
+           return ans
