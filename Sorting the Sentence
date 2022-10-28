@@ -1,0 +1,15 @@
+class Solution:
+    def sortSentence(self, s: str) -> str:
+        
+        suffle=s.split(" ")
+        final=""
+        print(suffle)
+        for i in range(len(suffle)):
+            mn=i
+            for j in range(i+1,len(suffle)):
+                if suffle[j][-1] < suffle[mn][-1]:
+                    mn=j
+            if i!=mn:
+                suffle[mn],suffle[i]=suffle[i],suffle[mn]
+            final+= suffle[i][:-1]+' '
+        return final[:-1]
