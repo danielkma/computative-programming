@@ -1,0 +1,28 @@
+#User function Template for python3
+
+class Solution: 
+    def select(self, a, i):
+        # code here 
+        #     tem=i
+        # f=i+1
+        # for j in range(i+1,len(a)):
+        #     if a[f] > a[j]:
+        #         f=j
+    
+        # if a[f]<a[tem]:
+        #     a[tem],a[f]=a[f],a[tem]
+        # return a
+
+    def selectionSort(self, a,n):
+        #code here
+        
+        for i in range(len(a)-1):
+            tem=i
+            f=i+1
+            for j in range(i+1,len(a)):
+                if a[f] > a[j]:
+                    f=j
+        
+            if a[f]<a[tem]:
+                a[tem],a[f]=a[f],a[tem]
+        return a
